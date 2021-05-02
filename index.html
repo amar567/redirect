@@ -14,15 +14,14 @@
                 if (!results) return null;
                 if (!results[2]) return '';
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+        };
 
       redirect = async()=>{
         // console.log(':(')
         const token =  getParameterByName('token')
         // console.log(token);
         window.location = 'https://e1a52cd35477.ngrok.io?token='+token
-      }
-
+      };
       redirect()
 </script>
 </body>

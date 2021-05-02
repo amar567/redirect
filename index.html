@@ -5,8 +5,25 @@
 </head>
 <body>
 <script>
-	var url= "";
-	window.location = url;
+	url = 'https://e1a52cd35477.ngrok.io '
+	
+	function getParameterByName(name, url = window.location.href) {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+      redirect = async()=>{
+        // console.log(':(')
+        const token =  getParameterByName('token')
+        // console.log(token);
+        window.location = url+'?'+token
+      }
+
+      redirect()
 </script>
 </body>
 </html> 
